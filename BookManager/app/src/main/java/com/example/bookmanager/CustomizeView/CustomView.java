@@ -14,10 +14,9 @@ public class CustomView extends VideoView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //        计算屏幕宽高
-        int width = getDefaultSize(0, widthMeasureSpec);
+        int width = getDefaultSize(0, widthMeasureSpec+1000);
         int heigth = getDefaultSize(0, heightMeasureSpec);
         setMeasuredDimension(width, heigth);
-
         
     }
 }
