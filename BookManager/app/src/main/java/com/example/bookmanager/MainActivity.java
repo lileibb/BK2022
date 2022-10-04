@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                mVideoView.stopPlayback();                  //停止播放
                 startActivity(new Intent(MainActivity.this,LoginActivity.class));
                 finish();                        //退出
+                mThread.stop();
                 break;
             default:
                 break;
