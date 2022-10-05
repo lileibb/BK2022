@@ -3,14 +3,17 @@ package com.example.bookmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.BugreportManager;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,8 +21,9 @@ import com.example.bookmanager.Utils.IronUtils;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView ironTitle,showButton;
+    private TextView ironTitle,showButton,ForgotPassword,RegisterButton;
     private EditText account,password;
+    private Button LoginButton;
     public boolean showpsd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +43,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         password = findViewById(R.id.PasswordText);
         ironTitle =findViewById(R.id.ironTitle);
         showButton = findViewById(R.id.ShowButton);
+        LoginButton = findViewById(R.id.LoginButton);
+        RegisterButton =findViewById(R.id.RegisterButton);
+        ForgotPassword = findViewById(R.id.FindPasswordButton);
         //默认密码不可见
         showpsd = false;
-        //设置appiron标题字体样式(方正舒体)
+        //设置字体样式(方正舒体)
         ironTitle.setTypeface(Typeface.createFromAsset(getAssets(),"font/FZSTK.TTF"));
+        LoginButton.setTypeface(Typeface.createFromAsset(getAssets(),"font/FZSTK.TTF"));
         //适配账号密码图标
         IronUtils.changeDraw(this,account,R.mipmap.account);
         IronUtils.changeDraw(this,password,R.mipmap.password);
         showButton.setOnClickListener(this);
+        LoginButton.setOnClickListener(this);
+        RegisterButton.setOnClickListener(this);
+        ForgotPassword.setOnClickListener(this);
 
     }
 
@@ -67,6 +78,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     showpsd = false;
                 }
                 break;
+            case R.id.LoginButton:
+                Intent intent0=new Intent(this,HomeActivity.class);
+                startActivity(intent0);
+                break;
+            case R.id.FindPasswordButton:
+                Intent intent1=new Intent(this,ForgotPassword.class);
+                startActivity(intent1);
+                break;
+            case R.id.RegisterButton:
+                Intent intent2=new Intent(this, RegisterActivity.class);
+                startActivity(intent2);
+                break;
+
         }
     }
 }
