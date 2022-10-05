@@ -11,4 +11,6 @@
     <string name="Getverificationcode">"获取验证码"</string>
     <string name="cationcode">验证码</string>
     <string name="ClickLogin">"已有账号？点击登陆"</string>
+    <string name="querenxiugai">"确认修改"</string>
+    <string name="backlogin">""返回登录</string>
 </resources>

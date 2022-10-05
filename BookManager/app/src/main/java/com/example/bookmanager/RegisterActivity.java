@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.example.bookmanager.Utils.IronUtils;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-   private Button register;
+    private Button register;
     private TextView ironTitle,showButton;
     private EditText account,password;
     private boolean showpsd;
