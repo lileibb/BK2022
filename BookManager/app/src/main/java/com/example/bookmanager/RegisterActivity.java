@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.bookmanager.Utils.IronUtils;
 
+import cn.bmob.v3.Bmob;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private Button register;
     private TextView ironTitle,showButton;
@@ -22,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Bmob.initialize(RegisterActivity.this,"e3229472d1c86ff68ad4b1962c1e656a");
         initView();
     }
 
